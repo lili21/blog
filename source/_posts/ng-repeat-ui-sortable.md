@@ -34,7 +34,10 @@ tags:
   <!-- end ngRepeat: l in lists -->
 </ul>
 ```
+<!-- more -->
+
 第一次拖拽
+
 ```
 <ul sortable="" class="ui-sortable">
   <!-- ngRepeat: l in lists -->

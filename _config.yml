@@ -7,7 +7,7 @@ title: li.li
 subtitle:
 description: Javascript, FP, Hipster
 author: li.li
-language:
+language: zh
 timezone:
 
 # URL
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yinwang
+theme: apollo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

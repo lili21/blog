@@ -6,14 +6,15 @@ tags:
 
 [source](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
-1. 避免偶然创建全局变量
+## 避免偶然创建全局变量
 
-  在正常模式下，如果在赋值的时候输错了变量名，会在当前作用域下创建一个变量。在严格模式下会抛出错误。
-  ```
-  'use strict';
-  mistypedVaraible = 17;
-  ```
-2. 在正常模式下默默失败的赋值，在严格模式下会抛出异常
+在正常模式下，如果在赋值的时候输错了变量名，会在当前作用域下创建一个变量。在严格模式下会抛出错误。
+```
+'use strict';
+mistypedVaraible = 17;
+```
+<!-- more -->
+## 在正常模式下默默失败的赋值，在严格模式下会抛出异常
 
   例如，`NaN`是不可写的全局变量。在正常模式下，赋值给`NaN`是无效的，也不会有任何反馈。在严格模式下，将会抛出异常。赋值给不可写变量，只读变量，或者给不可扩展对象添加新的属性在严格模式下都会抛出异常。
   ```
@@ -30,19 +31,21 @@ tags:
   Object.preventExtensions(fixed);
   fixed.newProp = 'ohai'; //报错
   ```
-3. 删除不可删的属性会报错
+## 删除不可删的属性会报错
 
   ```
   'use strict';
   delete Object.prorotype; //报错
   ```
-4. 对象属性名必须唯一（es6下可以不唯一）
+
+## 对象属性名必须唯一（es6下可以不唯一）
 
   ```
   'use strict';
   var o = {p : 1, p: 2}; //报错
   ```
-5. 函数参数名必须唯一
+
+## 函数参数名必须唯一
 
   ```
   'use strict';
@@ -51,9 +54,10 @@ tags:
     return a + b + c;
   }
   ```
-6. 八进制不可用
-7. with不可用
-  
+## 八进制不可用
+
+## with不可用
+
   ```
   'use strict';
   var x = 17;
@@ -62,7 +66,8 @@ tags:
     x;
   }
   ```
-8. eval不会影响外部作用域
+
+## eval不会影响外部作用域
 
   ```
   var x = 17;
@@ -90,7 +95,8 @@ tags:
   nonstrict("'Non-strict code.'");//非严格模式
   nonstrict("'use strict'; 'Strict mode code!'");//严格模式
   ```
-9. 禁止删除原始类型变量
+
+## 禁止删除原始类型变量
 
   ```
   'use strict';
@@ -99,7 +105,8 @@ tags:
 
   eval("var y; delete y;");//报错
   ```
-10. `eval`和`arguments`不可修改，以下操作都是语法错误
+
+## `eval`和`arguments`不可修改，以下操作都是语法错误
 
   ```
   'use strict';
@@ -114,7 +121,8 @@ tags:
   var y = function eval() {}
   var f = new Function('arguments', "'use strict'; return 17;");
   ```
-11. 严格模式下修改参数值不会影响`arguments`，修改`arguments`也不会影响参数
+
+## 严格模式下修改参数值不会影响`arguments`，修改`arguments`也不会影响参数
 
   ```
   function f(a) {
@@ -126,14 +134,16 @@ tags:
   console.assert(pair[0] === 42);
   console.assert(pair[1] === 17);
   ```
-12. `arguments.callee`不可用
+
+## `arguments.callee`不可用
 
   ```
   'use strict';
   var f = function() {return arguments.callee;};
   f(); //报错
   ```
-13. `this`可以是任意类型的值（在正模式下，`this`是对象）,而且如果没有指定`this`，`this`为`undefined`
+
+## `this`可以是任意类型的值（在正模式下，`this`是对象）,而且如果没有指定`this`，`this`为`undefined`
 
   ```
   'use strict';
