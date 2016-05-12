@@ -10,6 +10,8 @@ tags:
 
 原因是message参数所使用的序列化的算法（结构化克隆算法）对于message的内容与结构有一定的限制。
 
+<!-- more -->
+
 1. `Error`与`Function`对象无法被该算法复制，如果message中包含这样的对象，将会抛一个`DATA_CLONE_ERR`异常
 2. message中如果包含`DOM`节点，同样会抛一个`DATA_CLONE_ERR`异常
 3. 某些对象的属性不会被复制
