@@ -17,6 +17,8 @@ import angular from 'angular'
 const angular = require('angular')
 ```
 
+<!-- more -->
+
 需要用exports-loader处理一下
 
 ```
