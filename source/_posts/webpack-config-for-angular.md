@@ -1,7 +1,7 @@
 ---
 title: 那些年坑过我的webpack配置，angular+jQuery项目
 date: 2016-06-24 14:17:45
-tags:
+tags: webpack
 ---
 
 最近在死磕webpack，之前我们的项目有用grunt的，也有用gulp+webpack的。因为想简化与统一下构建工具，所以就计划全部用webpack。记录下踩过的坑。
