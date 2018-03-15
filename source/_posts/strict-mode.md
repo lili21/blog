@@ -9,7 +9,7 @@ tags:
 ## 避免偶然创建全局变量
 
 在正常模式下，如果在赋值的时候输错了变量名，会在当前作用域下创建一个变量。在严格模式下会抛出错误。
-```
+```javascript
 'use strict';
 mistypedVaraible = 17;
 ```
@@ -17,7 +17,7 @@ mistypedVaraible = 17;
 ## 在正常模式下默默失败的赋值，在严格模式下会抛出异常
 
   例如，`NaN`是不可写的全局变量。在正常模式下，赋值给`NaN`是无效的，也不会有任何反馈。在严格模式下，将会抛出异常。赋值给不可写变量，只读变量，或者给不可扩展对象添加新的属性在严格模式下都会抛出异常。
-  ```
+  ```javascript
   'use strict'
   //赋值给不可写变量
   var obj1 = {};
@@ -33,21 +33,21 @@ mistypedVaraible = 17;
   ```
 ## 删除不可删的属性会报错
 
-  ```
+  ```javascript
   'use strict';
   delete Object.prorotype; //报错
   ```
 
 ## 对象属性名必须唯一（es6下可以不唯一）
 
-  ```
+  ```javascript
   'use strict';
   var o = {p : 1, p: 2}; //报错
   ```
 
 ## 函数参数名必须唯一
 
-  ```
+  ```javascript
   'use strict';
   function sum(a, a, c) { //报错
     'use strict';
@@ -58,7 +58,7 @@ mistypedVaraible = 17;
 
 ## with不可用
 
-  ```
+  ```javascript
   'use strict';
   var x = 17;
   with (obj) //报错
@@ -69,14 +69,14 @@ mistypedVaraible = 17;
 
 ## eval不会影响外部作用域
 
-  ```
+  ```javascript
   var x = 17;
   var evalX = eval("'use strict'; var x = 42; x");
   console.assert(x === 17);
   console.assert(evalX === 42);
   ```
   需要注意的是，eval的调用方式也会影响到eval是否在严格模式下
-  ```
+  ```javascript
   function strict1(str) {
     'use strict';
     return eval(str);
@@ -98,7 +98,7 @@ mistypedVaraible = 17;
 
 ## 禁止删除原始类型变量
 
-  ```
+  ```javascript
   'use strict';
   var x;
   delete x;//报错
@@ -108,7 +108,7 @@ mistypedVaraible = 17;
 
 ## `eval`和`arguments`不可修改，以下操作都是语法错误
 
-  ```
+  ```javascript
   'use strict';
   eval = 17;
   arguments++;
@@ -124,7 +124,7 @@ mistypedVaraible = 17;
 
 ## 严格模式下修改参数值不会影响`arguments`，修改`arguments`也不会影响参数
 
-  ```
+  ```javascript
   function f(a) {
     'use strict';
     a = 42;
@@ -137,7 +137,7 @@ mistypedVaraible = 17;
 
 ## `arguments.callee`不可用
 
-  ```
+  ```javascript
   'use strict';
   var f = function() {return arguments.callee;};
   f(); //报错
@@ -145,7 +145,7 @@ mistypedVaraible = 17;
 
 ## `this`可以是任意类型的值（在正模式下，`this`是对象）,而且如果没有指定`this`，`this`为`undefined`
 
-  ```
+  ```javascript
   'use strict';
   function fun() {return this;}
   console.assert(fun() === undefined);

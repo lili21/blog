@@ -9,7 +9,7 @@ tags:
 通过拖拽把0拖至2的位置，再把2拖至3的位置。理应是`[1, 0, 3, 2, 4]`的列表却变成了`[1, 0, 4, 3, 2]`。控制台中输出的是当前的`lists`，但实际的UI与我们的`model`没有对应起来。
 ### 原因
 初始化
-```
+```html
 <ul sortable="" class="ui-sortable">
   <!-- ngRepeat: l in lists -->
   <li ng-repeat="l in lists" class="ng-scope">
@@ -38,7 +38,7 @@ tags:
 
 第一次拖拽
 
-```
+```html
 <ul sortable="" class="ui-sortable">
   <!-- ngRepeat: l in lists -->
   <li ng-repeat="l in lists" class="ng-scope">

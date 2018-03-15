@@ -20,7 +20,7 @@ tags: eslint git hooks
 
 .eslintrc
 
-```
+```json
 {
   "extends": "standard"
 }
@@ -30,7 +30,7 @@ tags: eslint git hooks
 
 package.json
 
-```
+```json
 {
   ...
   "devDependencies": {

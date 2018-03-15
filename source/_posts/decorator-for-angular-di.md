@@ -6,7 +6,7 @@ tags: decorator angular
 
 依赖注入一直是`angular`为人称道的特性之一，在这里先简单介绍一下依赖注入的实现原理。
 
-```
+```javascript
 // controller.js
 function ctrl ($scope, ServiceA) {
   ...
@@ -23,7 +23,7 @@ function ctrl ($scope, ServiceA) {
 
 像我们这样严肃的前端工程师，线上的代码肯定是有代码压缩过的。所有最后我们的代码可能变成
 
-```
+```javascript
 // controller.js
 function a (b, c) {
   ...
@@ -32,7 +32,7 @@ function a (b, c) {
 
 因为找不到`b`, `c`，`angular`就会报错。解决方式也很简单，
 
-```
+```javascript
 // 数组方式
 ['$scope', 'ServiceA', function ($scope, ServiceA) {
   ...
@@ -52,7 +52,7 @@ ctrl.$inject = ['$scope', 'ServiceA']
 
 工具的问题在于，依赖的更新会导致工具的不可用。比如最近我把`webpack`更新到了`2.0`，导致`ng-annotate-loader`了不可用。另一个问题是，很多时候我们会使用`class`，
 
-```
+```javascript
 // controller.js
 class Ctrl {
   constructor (ServiceA, ServiceB, ServiceC, ...) {
@@ -71,7 +71,7 @@ class Ctrl {
 `decorator`是ES7中的特性，目前该提案处于`stage-2`。利用`babel`，我们今天就可以用了。废话不多说，直接上代码
 
 
-```
+```javascript
 @Inject('ServiceA', 'ServiceB', 'ServiceC')
 class Ctrl {
   fetchData () {

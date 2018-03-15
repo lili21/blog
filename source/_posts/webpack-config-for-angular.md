@@ -10,7 +10,7 @@ tags:
 
 我们用的是angular@1.3.4，这个版本的angular是无法直接用`CommonJS`或`ES2015 module`语法的。如果想要这样用
 
-```
+```javascript
 import angular from 'angular'
 
 // or
@@ -21,7 +21,7 @@ const angular = require('angular')
 
 需要用exports-loader处理一下
 
-```
+```javascript
 // webpack config file
   ...
   module: {
@@ -38,14 +38,14 @@ const angular = require('angular')
 ## jQuery + angular 的坑
 angular内置了一个简化版的jQuery，想要让angular使用jQuery的话，必须要在angular前引入jQuery同时暴露`$`全局变量。
 
-```
+```javascript
 import jquery form 'jquery' // 先引入jquery
 import angular from 'angular'
 ```
 
 使用用expose-loader暴露`$`全局变量
 
-```
+```javascript
 // webpack config file
   ...
   module: {
@@ -61,7 +61,7 @@ import angular from 'angular'
 
 你也可以直接在代码中声明全局变量，这样就不需要expose-loader了
 
-```
+```javascript
 window.$ = window.jQuery = require('jquery')
 const angular = require('angular')
 ```
