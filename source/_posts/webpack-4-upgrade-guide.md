@@ -152,8 +152,11 @@ module.exports = {
 }
 ```
 
-你可以在[这里](https://github.com/lili21/webpack4-demo)看到完整的配置。
+这份[gist](https://gist.github.com/sokra/1522d586b8e5c0f5072d7565c2bee693)算是一份关于`optimization.splitChunks`，`optimization.runtimeChunk`的文档了，感兴趣的同学可以看一下
+
 
 迁移时间其实花的挺长的，一方面给webpack提issue，一方面是给wepback插件提issue跟PR。
-wepback修复issue的时间让我印象深刻，但是插件的反应就比较慢了，可能提了几天才有反馈。
+wepback对于issue的反馈还是很快的，上次提的issue，几个小时就给我直接修复了。但是插件就比较慢了，可能issue提了几天才有反馈。
 总之希望这篇文章能够帮到正在升级和打算升级的同学们。
+
+最后奉上一份完整的[webpack 4配置](https://github.com/lili21/webpack4-demo)，有问题可以直接在这里repo里提issue。
