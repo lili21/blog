@@ -71,7 +71,7 @@ webpack 4使用了新的插件体系，导致之前的插件基本都是需要�
 
 ### RIP CommonsChunkPlugin
 
-上面讲到的都是一些第三方的插件改动，而改动最大，影响也最大的就是webpack 4使用`optimization.splitChunks`替代了`CommonsChunkPlugin`，并且支持移除了`CommonsChunkPlugin`，所以这部分迁移起来比较麻烦。
+上面讲到的都是一些第三方的插件改动，而改动最大，影响也最大的就是webpack 4使用`optimization.splitChunks`替代了`CommonsChunkPlugin`，并且直接移除了`CommonsChunkPlugin`，所以这部分迁移起来比较麻烦。
 
 对于各位配置工程师来说，`CommonsChunkPlugin`应该是很熟悉了，我们主要用他来抽取代码中的共用部分，`webpack runtime`之类的代码，结合`chunkhash`，实现最好的缓存策略。而这一部分，也是webpack支持的比较差的，这个几乎三岁的[issue](https://github.com/webpack/webpack/issues/1315)，至今还没有解决。对这个问题比较感兴趣的，可以拜读一下这篇[文章](https://medium.com/webpack/predictable-long-term-caching-with-webpack-d3eee1d3fa31)。我这里就不展开了，直接贴一份`CommonsChunkPlugin`时代解决这个问题的配置
 
