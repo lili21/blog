@@ -61,6 +61,10 @@ webpack 4使用了新的插件体系，导致之前的插件基本都是需要�
 
     官方出了一个[mini-css-extract-plugin](github.com/webpack-contrib/mini-css-extract-plugin)，但是这个问题更多，不支持HMR，不支持`contenthash`，所以目前基本没法用。
 
+    **2018-03-21更新**
+
+    [etwp决定不再支持webpack@4](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/749)
+
 - html-webpack-plugin@3.0.0+
 
     这个插件目前是支持webpack 4的，只是他自己的插件不一定支持，这个在升级的时候需要注意
