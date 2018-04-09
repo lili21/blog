@@ -4,6 +4,14 @@ date: 2018-03-15 15:53:33
 tags: webpack
 ---
 
+**2018-04-09更新**
+[mini-css-extract-plugin@^0.4.0](https://github.com/webpack-contrib/mini-css-extract-plugin)支持了**contenthash**（需配合webpack@^4.3.0使用）。
+
+**2018-03-21更新**
+
+[etwp决定不再支持webpack@4](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/749)
+
+
 webpack 4发布也有一段时间了，虽然官方的文档，升级指南都没有完成，部分插件适配webpack 4的开发也还在进行中，但对于一个资深前端配置工程师，大刀早已饥渴难耐，所以就出一份非官方升(cai)级(keng)指南吧。
 
 [我没时间看你废话，给我一份配置](https://github.com/lili21/webpack4-demo)
@@ -59,11 +67,7 @@ webpack 4使用了新的插件体系，导致之前的插件基本都是需要�
     我自己遇到的问题是，在配合`splitChunks`(后面会讲到)时，会生成0kb的css文件，[issue](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/738)。
     对于这个问题，我已经提了[PR](https://github.com/webpack-contrib/extract-text-webpack-plugin/pull/746)了。
 
-    官方出了一个[mini-css-extract-plugin](github.com/webpack-contrib/mini-css-extract-plugin)，但是这个问题更多，不支持HMR，不支持`contenthash`，所以目前基本没法用。
-
-    **2018-03-21更新**
-
-    [etwp决定不再支持webpack@4](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/749)
+    官方出了一个[mini-css-extract-plugin](github.com/webpack-contrib/mini-css-extract-plugin)作为替代品
 
 - html-webpack-plugin@3.0.0+
 
